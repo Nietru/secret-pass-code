@@ -4,7 +4,11 @@ var generateBtn = document.querySelector("#generate");
 
 // This is inside the dashed bordered box on the webpage that displays Your Secure Password.
 function generatePassword() {
-  var typesChar = prompt("Please choose one Uppercase, one Lowercase, one number, and one symbol character for your desired Passcode.");
+  var uppercaseChoice = prompt('Please choose one Uppercase character, and click "ok".');
+  var lowercaseChoice = prompt('Please choose one lowercase character, and click "ok".');
+  var specialChoice = prompt('Please choose one special character, *&^%! etc..., and click "ok".');
+  var numberChoice = prompt('Please choose one numerical value character, and click "ok".');
+
   var length = prompt("Please choose the length of your desired Passcode. (Must be 8 - 128 Characters)");
   return "Password will be right here once I figure it out! haha"
 }
