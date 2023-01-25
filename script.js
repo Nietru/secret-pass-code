@@ -12,7 +12,7 @@ function writePassword() {
   var password = generatePassword();      // Need to define generatePassword function.
   var passwordText = document.querySelector("#password");   // #password is the card.
 
-  passwordText.value = password;
+  passwordText.value = "test";
 
 }
 
@@ -23,15 +23,15 @@ function writePassword() {
         uppercaseChoice: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         specialChoice: "!@#$%^&*()"
     };
-    var uppercaseChoice = prompt('Please choose one Uppercase character, and click "ok".');
-    var lowercaseChoice = prompt('Please choose one lowercase character, and click "ok".');
-    var specialChoice = prompt('Please choose one special character, *&^%! etc..., and click "ok".');
-    var numberChoice = prompt('Please choose one numerical value character, and click "ok".');
+    var uppercaseChoice = confirm('Passcode must contain one Uppercase character.');
+    var lowercaseChoice = confirm('Passcode must contain one Lowercase character.');
+    var specialChoice = confirm('Passcode must contain one Special character.');
+    var numberChoice = confirm('Passcode must contain one Numeric character.');
   
-    var length = prompt("Please choose the length of your desired Passcode. (Must be 8 - 128 Characters)");
+    var length = Number(confirm(prompt("Please choose the length of your desired Passcode. (Must be 8 - 128 Characters)")));
     return password;
 }
 
-var password = generatePassword(8, {digits: true, lowercase: true, uppercase: true, symbols: true});
+// var password = generatePassword(8, {digits: true, lowercase: true, uppercase: true, symbols: true});
 
-console.log(password);
+// console.log(password);
