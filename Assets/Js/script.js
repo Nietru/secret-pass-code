@@ -2,6 +2,7 @@
 // #generate is the red button.
 var generateBtn = document.querySelector("#generate");
 
+
 // This is inside the dashed bordered box on the webpage that displays Your Secure Password.
 function generatePassword() {
       numberChoice = [1,2,3,4,5,6,7,8,9,0].split(',');
@@ -9,17 +10,32 @@ function generatePassword() {
       uppercaseChoice = ['A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'].split(',');
       specialChoice = ['!,@,#,$,%,^,&,*,(,)'].split(',');
       
-      var charInputArray = []; // to store the user's selected characters.
+      var charArray = []; // to store the user's selected characters.
 
-      var pwLength = getPasswordLength(); //function to figure out users answer on length btwn 8 and 128 characters.
   };
+
+
+  // the function that will possibly story the users choice after prompting them... once i figure it out.
+  var passwordLength = function() {
+    var userChoice = 0;
+    // Ask user for their choice
+    var userChoice = window.confirm("Please enter your preferred password length. Choose a number between 8 and 128: ");
+  
+    // If user pressed Cancel, immediately end function
+    if ((!userChoice) || ((userChoice < 8) || (userChoice > 128))){
+      return;
+    }
+  }
+
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();      // defined generatePassword() line 6.
+  var password = generatePassword();      // defined generatePassword()
   var passwordText = document.querySelector("#password");   // #password is the card.
 
-  passwordText.value = "test";
+  passwordText.value = password;
+
 
 
   // Add event listener to generate button
